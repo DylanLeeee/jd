@@ -64,7 +64,7 @@ from database import orms
 '''
 路由注册
 '''
-from controller import apis
-from controller.admin import sys_user #系统账号相关服务
+# from controller import apis
+# from controller.admin import sys_user #系统账号相关服务
 
 from controller.products import add_products   # 新增商品
