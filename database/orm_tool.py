@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
-# @Time    : 18-11-7 下午3:56
-# @Author  : Redtree
-# @File    : orm_tool.py
-# @Desc :  ORM 文件编写辅助工具，快速生成__init__/__repr__定制,有空再升级.
+# @Author :  Dylan  * 
+# @Date :  2021-06-27 20:54:12  *
+# @Last Modified by :    Dylan  * 
+# @Last Modified time :  2021-06-27 20:54:12 
+
 
 
 def dojob():

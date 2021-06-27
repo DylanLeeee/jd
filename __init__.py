@@ -24,6 +24,7 @@ app = Flask(__name__)
 app.secret_key = '\xca\x0c\x86\x04\x98@\x02b\x1b7\x8c\x88]\x1b\xd7"+\xe6px@\xc3#\\'
 # 实例化 cors
 CORS(app, supports_credentials=True)
+
 app.config.from_object(config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

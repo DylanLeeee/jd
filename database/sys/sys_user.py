@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
-# @Time    : 18-8-8 下午3:43
-# @Author  : Redtree
-# @File    : sys_user.py
-# @Desc : 系统用户表orm构造(只是个模板)
-
+# @Author :  Dylan  * 
+# @Date :  2021-06-27 20:51:12  *
+# @Last Modified by :    Dylan  * 
+# @Last Modified time :  2021-06-27 20:51:12 
 
 from __init__ import db
 import json
@@ -18,24 +16,12 @@ class Sys_user(db.Model):
     nickname = db.Column(db.String(50),comment='昵称')
     salt = db.Column(db.String(16),comment='密码盐')
     password=db.Column(db.String(32),comment='入库密码')
+    role=db.Column(db.String(32),comment='角色')
     del_flag= db.Column(db.Integer,comment='')
     created_time=db.Column(db.Integer,comment='')
     updated_time=db.Column(db.Integer,comment='')
     created_user = db.Column(db.String(50),comment='')
 
-  
-    def __repr__(self):
-        obj = {
-            "uuid": self.uuid,
-            "username": self.username,
-            "nickname": self.nickname,
-            "salt": self.salt,
-            "password": self.password,
-            "del_flag": self.del_flag,
-            "created_time": self.created_time,
-            "updated_time": self.updated_time,
-            "created_user": self.created_user
-        }
-        return json.dumps(obj)
+
 
 

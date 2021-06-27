@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
-# @ Time   :  2021/4/6 14:46
-# @ Author : Redtree
-# @ File :  db_manager 
-# @ Desc :  单独将flask_migrate部分功能移出，不与flask_app本地IDE工具调试冲突。
+# @Author :  Dylan  * 
+# @Date :  2021-06-27 20:55:02  *
+# @Last Modified by :    Dylan  * 
+# @Last Modified time :  2021-06-27 20:55:02 
+
 
 
 from __init__ import manager
