@@ -15,19 +15,19 @@ from utils.http import responser
 from service.products import add_products_manager
 
 
-@app.route("/get_product_info",methods=["GET","POST"])
-def get_product_info():
+@app.route("/add_pruduct_info",methods=["GET","POST"])
+def add_pruduct_info():
     res_status, rjson = responser.post_param_check(request, ['skuid', 'bestPrice'])
     if res_status == 'success':
-        return add_products_manager.add_products_by_one( rjson['skuid'], rjson['bestPrice'])
+        return add_products_manager.add_pruduct_info( rjson['skuid'], rjson['bestPrice'])
     else:
         return rjson
 
 
-@app.route("/get_goods_list",methods=["GET","POST"])
-def get_goods_list():
+@app.route("/get_pruducts_info",methods=["GET","POST"])
+def get_pruducts_info():
     res_status, rjson = responser.post_param_check(request, ['goodsName'])
     if res_status == 'success':
-        return add_products_manager.get_goods_list( rjson['goodsName'])
+        return add_products_manager.get_pruducts_info( rjson['goodsName'])
     else:
         return rjson

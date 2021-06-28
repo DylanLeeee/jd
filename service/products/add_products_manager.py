@@ -20,7 +20,7 @@ import datetime
 
 client = jd_client.JdApiClient(JD_KEY, JD_SECRET)
 # 通过商品id 新增商品
-def add_products_by_one(jd_id, best_price):
+def add_pruduct_info(jd_id, best_price):
     if not all([jd_id, best_price]):
         return responser.send(10005)
     param = {"skuIds":jd_id}
@@ -42,6 +42,7 @@ def add_products_by_one(jd_id, best_price):
                 name = item.get('goodsName')
                 skuid = item.get('skuId')
                 img_url = item.get('imgUrl')
+                
                 catagory = item.get('cid3Name')
                 jd_obj = Jd_goods_info(code=code, name=name, skuid=skuid,is_jd_sale=is_jd_sale,img_url=img_url,
                                         best_price=best_price, unit_price=unit_price, catagory=catagory,
@@ -53,7 +54,7 @@ def add_products_by_one(jd_id, best_price):
     return responser.send(10004)
 
 
-def get_goods_list(goods_name):
+def get_pruducts_info(goods_name):
     rdata = []
     filters = (
         db.cast(Jd_goods_info.end_date, db.DATE) >= db.cast(datetime.datetime.now(), db.DATE)
@@ -63,7 +64,7 @@ def get_goods_list(goods_name):
         goods_obj_list = Jd_goods_info.query.all()
     else:
         goods_name = goods_name.strip()
-        goods_obj_list = Jd_goods_info.query.filter(*filters, Jd_goods_info.name.contains(goods_name)).all()
+        goods_obj_list = Jd_goods_info.query.filter(*filters, Jd_goods_info.name.contains(goods_name)).order_by(Jd_goods_info.created_at.asc()).all()
 
     for obj_item in  goods_obj_list:
         temp_dict = {}
