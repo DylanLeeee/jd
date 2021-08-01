@@ -14,7 +14,7 @@ database_setting
 DIALCT = "mysql"
 DRIVER = "pymysql"
 USERNAME = "root"
-PASSWORD = "manteia"
+PASSWORD = "hospital"
 HOST = "101.37.67.208"
 PORT = "3306"
 DATABASE = "jd"
