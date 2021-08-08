@@ -84,6 +84,8 @@ def get_param_check(request, param_list):
 # 校验post_json 数据格式是否符合参数列表 若不符合，提示差集
 def post_param_check(request,param_list):
     try:
+        if not param_list:
+            return 'success', []
         rjson= request2json(request)
         rkeys_list = list(rjson.keys())
         no_match_list = list(set(rkeys_list) ^ set(param_list))

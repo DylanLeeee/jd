@@ -69,3 +69,4 @@ from database import orms
 # from controller.admin import sys_user #系统账号相关服务
 
 from controller.products import add_products   # 新增商品
+from controller.products import app_products   #app 获取商品列表
